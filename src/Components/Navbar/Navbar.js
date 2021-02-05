@@ -8,6 +8,7 @@ import Button from "./Button";
 const Navbar = () => {
   const [click, setClick] = useState(false);
   const [dropdown, setDropdown] = useState(false);
+  const [navScroll, setNavScroll] = useState(false);
 
   const handleClick = () => setClick(!click);
   const closeMobileMenu = () => setClick(false);
@@ -26,9 +27,18 @@ const Navbar = () => {
       setDropdown(false);
     }
   };
+
+  const handleNavScroll = () => {
+    if (window.scrollY >= 80) {
+      setNavScroll(true);
+    } else {
+      setNavScroll(false);
+    }
+  };
+  window.addEventListener("scroll", handleNavScroll);
   return (
     <>
-      <nav className="navbar position-fixed">
+      <nav className={navScroll ? "navbar scroll-nav" : "navbar"}>
         <Link to="/" className="navbar-logo">
           <FaReact className="react-icon" /> Navbar
         </Link>

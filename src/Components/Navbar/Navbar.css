@@ -12,7 +12,6 @@
   padding: 6px 18px;
   transition: all 0.3s ease-out;
   background-color: transparent;
-  /* color: #000; */
   border-radius: 4px;
   border: 2px solid #1888ff;
 }
@@ -44,12 +43,17 @@
 }
 
 .navbar {
-  background: linear-gradient(90deg, rgb(28, 27, 27) 0%, rgb(26, 23, 23) 100%);
   height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
   font-size: 1.2rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+.navbar.scroll-nav {
+  background: linear-gradient(90deg, rgba(28, 27, 27, 0.514) 0%, rgba(26, 23, 23, 0.781) 100%);
 }
 
 .navbar-logo {
@@ -109,7 +113,7 @@
 }
 
 @media screen and (max-width: 960px) {
-  .caret-icon{
+  .caret-icon {
     display: none;
   }
   .NavbarItems {
